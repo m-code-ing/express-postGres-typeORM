@@ -6,8 +6,6 @@ const router = express.Router();
 
 router.post("/api/client/:clientId/transaction", async (req, res) => {
   const { clientId } = req.params;
-  console.log(req.params);
-  console.log(req.body);
 
   const { type, amount } = req.body;
 
