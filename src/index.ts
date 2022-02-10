@@ -8,6 +8,7 @@ import { createBankerRouter } from "./routes/create_banker";
 import { createTransactionRouter } from "./routes/create_transactions";
 import { connectBankerToClient } from "./routes/connect_banker_to_client";
 import { deleteClient } from "./routes/delete_client";
+import { getClients } from "./routes/get_clients";
 
 const app = express();
 
@@ -31,6 +32,7 @@ const main = async () => {
     app.use(createTransactionRouter);
     app.use(connectBankerToClient);
     app.use(deleteClient);
+    app.use(getClients);
 
     app.listen(8080, () => {
       console.log("listening on port 8080");
