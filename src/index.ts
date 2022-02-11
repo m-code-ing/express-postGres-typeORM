@@ -1,5 +1,6 @@
 import { createConnection } from "typeorm";
-import express, { application } from "express";
+import express from "express";
+import cors from "cors";
 import { Banker } from "./entities/Banker";
 import { Client } from "./entities/Client";
 import { Transaction } from "./entities/Transactions";
@@ -26,6 +27,7 @@ const main = async () => {
     });
     console.log("connected to postgres");
 
+    app.use(cors());
     app.use(express.json());
     app.use(createClientRouter);
     app.use(createBankerRouter);
